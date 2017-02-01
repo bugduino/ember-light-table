@@ -48,7 +48,7 @@ export default Ember.Mixin.create({
 
   actions: {
     onScrolledToBottom() {
-      if (this.get('canLoadMore')) {
+      if (this.get('canLoadMore') && !this.get('page')) {
         this.incrementProperty('page');
         this.fetchRecords();
       }
